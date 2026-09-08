@@ -1,93 +1,180 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>投影显控新时代 - 广州能力通科技</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/icon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantonics-tech - Future New Display Controlling</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">Cantonics 能力通科技</div>
-        <nav>
-            <a href="index.html">首页</a>
-            <a href="uvmap.html">uvMapp自动融合</a>
-            <a href="3dmapping.html">3D Mapping投影</a>
-            <a href="about.html">关于我们</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <span>Cantonics</span>-tech
+            </div>
+                        <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="banner">
-        <h1>未来 · 投影显控新时代</h1>
-        <p class="en-text">Future New display controlling</p>
-    </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Future New Display Controlling</h1>
+            <p>More than twenty years of display controlling development experience, with PC software or ARM embedded solutions</p>
+            <a href="products.html" class="btn btn-primary">Explore Products</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        </div>
+    </section>
 
-    <div class="container">
-        <section>
-            <h2 class="section-title">二十年研发沉淀，软硬一体化方案</h2>
-            <p class="text-block en-text">More than twenty years of display controlling development experience, with PC software or ARM embedded solutions</p>
-            <p class="text-block">拥有二十年投影显控研发经验，提供PC主机软件、嵌入式ARM硬件两套完整解决方案，适配展馆、文旅、仿真、教育全场景。</p>
-        </section>
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Technologies</h2>
+                <p>Base on technique, application-orientation, serving customer</p>
+            </div>
+            <div class="feature-grid">
+                <a class="feature-card" href="product-uvmapp.html">
+                    <i class="fas fa-projector"></i>
+                    <h3>uvMapp Auto Geometry Correction</h3>
+                    <p>Camera-based technique that automatically maps stage coordinates, enabling auto geometry registration and picture blending without manual grid adjustment.</p>
+                </a>
+                <a class="feature-card" href="product-3d-mapping.html">
+                    <i class="fas fa-box"></i>
+                    <h3>3D Mapping Projection</h3>
+                    <p>Support for standard OBJ 3D models exported from 3ds Max or Blender, enabling precise 3D curved surface projection mapping.</p>
+                </a>
+                <a class="feature-card" href="product-arm-hardware.html">
+                    <i class="fas fa-desktop"></i>
+                    <h3>PC & ARM Solutions</h3>
+                    <p>Complete solutions including PC host software and embedded ARM hardware, adaptable to exhibition, cultural tourism, simulation, and education scenarios.</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section style="margin-top:60px;">
-            <h2 class="section-title">合作共赢</h2>
-            <p class="text-block en-text">Cooperation and win-win</p>
-            <h3 class="sub-title">以技术为基础、以应用导向，全面服务于客户群体</h3>
-            <p class="text-block en-text">Base on technique， application-orientation，serving customer</p>
-        </section>
+    <section class="latest-news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News</h2>
+                <p>Stay updated with our latest announcements</p>
+            </div>
 
-        <section style="margin-top:60px;">
-            <h2 class="section-title">uvMapp 自动几何校正融合</h2>
-            <p class="text-block en-text">uvMapp is a Camera based technique， for mapping the stage(multiple projection screens) coordinates into the scene(what we see) coordinates。With this technique，auto geometry registration and picture blending can be helpful to our technical staffs，no more handful work is needed。</p>
-            <p class="text-block">uvMapp基于相机成像技术，一次获得舞台平面与投影光路的坐标关系，自动进行画面对齐和图像融合，无需过多人工网格微调，大幅降低现场调试工作量。</p>
-            <div class="img-row">
-                <div class="img-box">
-                    <img src="images/uvMapp_des.png" alt="uvMapp相机校正界面" style="width:100%;height:100%;object-fit:cover;">
+            <div class="news-card-horizontal">
+                <img src="assets/images/products/3d_scene.jpg" alt="3D Mapping">
+                <div class="news-content">
+                    <div class="news-date">2015 &middot; Technology</div>
+                    <h3><a href="product-3d-mapping.html">Advanced 3D Mapping Projection Technology</a></h3>
+                    <p>Introduced 3D mapping projection technology, enabling precise curved surface projection mapping onto standard OBJ 3D models for exhibition and cultural tourism applications.</p>
+                    <a href="product-3d-mapping.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-        </section>
 
-        <section style="margin-top:60px;">
-            <h2 class="section-title">3D Mapping 三维模型投影</h2>
-            <p class="text-block en-text">Playing the 3D model file in Wavefront obj format，which can be exported by most of the popular 3D modeling software，such as 3DMax or Blender。The projection screen is some structural building or 3D printing models with the same size of 3D model files。</p>
-            <p class="text-block">支持3dmax、Blender导出标准OBJ三维模型，实体白模可等比例加工/3D打印，实现精准三维曲面投影映射。</p>
-            <div class="img-row">
-                <div class="img-box">
-                    <img src="images/3d_model.jpg" alt="实体模型映射演示" style="width:100%;height:100%;object-fit:cover;">
+            <div class="news-card-horizontal">
+                <img src="assets/images/products/uvMapp_des.png" alt="uvMapp">
+                <div class="news-content">
+                    <div class="news-date">2018 &middot; Product Launch</div>
+                    <h3><a href="product-uvmapp.html">Introducing uvMapp: Auto Geometry Correction</a></h3>
+                    <p>Released a camera-based auto geometry correction system that automatically maps stage coordinates, enabling auto geometry registration and picture blending without manual grid adjustment.</p>
+                    <a href="product-uvmapp.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-        </section>
 
-        <section style="margin-top:60px;">
-            <h2 class="section-title">行业应用领域</h2>
-            <p class="en-text">Industry application</p>
-            <div class="industry-grid">
-                <div class="industry-card">
-                    <h3 class="third-title">展览展示 Show/museum</h3>
-                    <p>博物馆，展览馆，政企数字展厅</p>
-                    <p class="en-text">Exhibition/museum/product gallery</p>
-                </div>
-                <div class="industry-card">
-                    <h3 class="third-title">教育 Education</h3>
-                    <p>信息技术教室，报告厅礼堂，校园电视台</p>
-                    <p class="en-text">Information teaching room，reporting hall，school TV broadcasting</p>
-                </div>
-                <div class="industry-card">
-                    <h3 class="third-title">户外文旅 Cultural tourism</h3>
-                    <p>户外灯光秀，楼体秀，主题公园，主题乐园</p>
-                    <p class="en-text">Outdoor Image and light show，building projection mapping，theme park，theme paradise</p>
-                </div>
-                <div class="industry-card">
-                    <h3 class="third-title">仿真 Virtual realist</h3>
-                    <p>互动VR，专业仿真，飞行模拟，航海模拟</p>
-                    <p class="en-text">Interactive games， fly simulation，driving simulation</p>
+            <div class="news-card-horizontal">
+                <img src="assets/images/products/arm_net.jpg" alt="ARM Hardware">
+                <div class="news-content">
+                    <div class="news-date">2020 &middot; Product Launch</div>
+                    <h3><a href="product-arm-hardware.html">Embedded ARM Hardware Solutions</a></h3>
+                    <p>Introduced embedded ARM hardware solutions, bringing compact and reliable display control to ARM-based platforms.</p>
+                    <a href="product-arm-hardware.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <section class="customers-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industry Applications</h2>
+                <p>Comprehensive solutions for diverse industries</p>
+            </div>
+            <div class="customers-grid">
+                <div class="customer-logo-card">
+                    <div class="customer-logo"><i class="fas fa-landmark"></i></div>
+                    <h4>Exhibition & Museum</h4>
+                    <p style="color: #64748b; margin-top: 1rem;">Museum, exhibition hall, government digital showroom</p>
+                </div>
+                <div class="customer-logo-card">
+                    <div class="customer-logo"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Education</h4>
+                    <p style="color: #64748b; margin-top: 1rem;">IT classrooms, lecture halls, campus TV broadcasting</p>
+                </div>
+                <div class="customer-logo-card">
+                    <div class="customer-logo"><i class="fas fa-theater-masks"></i></div>
+                    <h4>Cultural Tourism</h4>
+                    <p style="color: #64748b; margin-top: 1rem;">Outdoor shows, building projection, theme parks</p>
+                </div>
+                <div class="customer-logo-card">
+                    <div class="customer-logo"><i class="fas fa-gamepad"></i></div>
+                    <h4>Simulation</h4>
+                    <p style="color: #64748b; margin-top: 1rem;">Interactive VR, flight simulation, driving simulation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Display Experience?</h2>
+            <p>Join hundreds of satisfied customers who trust Cantonics-tech for their display control solutions.</p>
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            <a href="products.html" class="btn btn-secondary">View Products</a>
+        </div>
+    </section>
 
     <footer>
-        广州能力通科技有限公司 ©2026 All Rights Reserved
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cantonics-tech</h3>
+                    <p>Professional projection display control technology developer. Providing PC software and ARM embedded solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" style="display:none;">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cantonics-tech. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

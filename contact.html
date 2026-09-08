@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cantonics-tech</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <span>Cantonics</span>-tech
+            </div>
+                        <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for inquiries, support, or partnership opportunities.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem;">
+                <div>
+                    <h2>Contact Information</h2>
+                    <div style="margin-top: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Guangzhou City, Guangdong Province, China</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <i class="fas fa-envelope" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>914100608@qq.com</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                            <i class="fab fa-weixin" style="font-size: 1.5rem; color: #3b82f6; margin-top: 0.5rem;"></i>
+                            <div>
+                                <h4>Webchat</h4>
+                                <img src="assets/images/icons/webchat.png" alt="WeChat QR code" style="width: 8rem; height: auto; border-radius: 0.5rem; display: block;">
+                                <p style="font-size: 0.875rem; opacity: 0.7; margin-top: 0.5rem;">Scan the QR code to add us on WeChat.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <i class="fas fa-globe" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                            <div>
+                                <h4>Website</h4>
+                                <p>www.cantonics.com</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-clock" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p>Saturday - Sunday: By appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Send Us a Message</h2>
+                    <div id="contact-success" class="contact-success" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 1rem 1.5rem; border-radius: 8px; margin-top: 2rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #10b981;"></i>
+                        <div>
+                            <strong>Message sent successfully!</strong>
+                            <p style="margin: 0; font-size: 0.875rem; opacity: 0.85;">We will get back to you within 1-2 business days.</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" action="https://formsubmit.co/914100608@qq.com" method="POST" style="margin-top: 2rem;">
+                        <input type="hidden" name="_subject" value="New message from Cantonics website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_honey" style="display:none;">
+                        <input type="hidden" name="_next" value="https://www.cantonics.com/contact.html?sent=1">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-map">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Guangzhou, Guangdong, China</p>
+                    <p style="font-size: 0.875rem; opacity: 0.7;">Guangzhou Cantonics Technology Co., Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cantonics-tech</h3>
+                    <p>Professional projection display control technology developer. Providing PC software and ARM embedded solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html" class="active">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" style="display:none;">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cantonics-tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Show success message if redirected from formsubmit
+        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+            var successBox = document.getElementById('contact-success');
+            if (successBox) {
+                successBox.style.display = 'flex';
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            // Clean the URL without reload
+            var cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+    </script>
+</body>
+</html>
