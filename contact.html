@@ -77,19 +77,29 @@
                 </div>
                 <div>
                     <h2>Send Us a Message</h2>
-                    <div id="contact-success" class="contact-success" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 1rem 1.5rem; border-radius: 8px; margin-top: 2rem; display: flex; align-items: center; gap: 0.75rem;">
-                        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #10b981;"></i>
+                    <div id="contact-success" class="contact-success" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 1rem 1.5rem; border-radius: 8px; margin-top: 2rem; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #10b981; flex-shrink: 0;"></i>
                         <div>
                             <strong>Message sent successfully!</strong>
-                            <p style="margin: 0; font-size: 0.875rem; opacity: 0.85;">We will get back to you within 1-2 business days.</p>
+                            <p style="margin: 0.25rem 0 0; font-size: 0.875rem; opacity: 0.85;">We will get back to you within 1-2 business days.</p>
+                            <p id="activation-hint" style="display:none; margin: 0.5rem 0 0; font-size: 0.8rem; color: #b45309; background: #fffbeb; border: 1px dashed #f59e0b; padding: 0.5rem 0.75rem; border-radius: 6px;">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>First-time activation required:</strong> An activation email has been sent to our inbox. If this is your first submission and we haven't replied, the message may be in the spam folder or blocked by the mail provider. Please contact us directly via email/WeChat if urgent.
+                            </p>
                         </div>
                     </div>
-                    <form class="contact-form" action="https://formsubmit.co/914100608@qq.com" method="POST" style="margin-top: 2rem;">
+                    <div id="contact-error" style="display: none; background: #fef2f2; border: 1px solid #ef4444; color: #991b1b; padding: 1rem 1.5rem; border-radius: 8px; margin-top: 2rem; align-items: flex-start; gap: 0.75rem;">
+                        <i class="fas fa-exclamation-circle" style="font-size: 1.5rem; color: #ef4444; flex-shrink: 0; margin-top: 0.125rem;"></i>
+                        <div>
+                            <strong>Submission failed</strong>
+                            <p id="contact-error-msg" style="margin: 0.25rem 0 0; font-size: 0.875rem; opacity: 0.85;"></p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form" action="https://formsubmit.co/outlook_4EDBCCF6876B5E5A@outlook.com" method="POST" style="margin-top: 2rem;">
                         <input type="hidden" name="_subject" value="New message from Cantonics website">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_honey" style="display:none;">
-                        <input type="hidden" name="_next" value="https://www.cantonics.com/contact.html?sent=1">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -106,7 +116,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="contact-submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -161,17 +171,88 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        // Show success message if redirected from formsubmit
-        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+        // Async form submission via formsubmit.co AJAX endpoint
+        (function () {
+            var form = document.getElementById('contact-form');
+            var submitBtn = document.getElementById('contact-submit-btn');
             var successBox = document.getElementById('contact-success');
-            if (successBox) {
-                successBox.style.display = 'flex';
-                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            var errorBox = document.getElementById('contact-error');
+            var errorMsg = document.getElementById('contact-error-msg');
+            var activationHint = document.getElementById('activation-hint');
+
+            if (!form) return;
+
+            // Show success message if redirected from formsubmit (fallback for non-JS flow)
+            if (new URLSearchParams(window.location.search).get('sent') === '1') {
+                if (successBox) {
+                    successBox.style.display = 'flex';
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                var cleanUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, cleanUrl);
             }
-            // Clean the URL without reload
-            var cleanUrl = window.location.origin + window.location.pathname;
-            window.history.replaceState({}, document.title, cleanUrl);
-        }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.dataset.originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                if (errorBox) errorBox.style.display = 'none';
+                if (successBox) successBox.style.display = 'none';
+
+                // Build the payload as FormData
+                var formData = new FormData(form);
+
+                fetch('https://formsubmit.co/ajax/outlook_4EDBCCF6876B5E5A@outlook.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                })
+                    .then(function (res) {
+                        if (!res.ok) throw new Error('HTTP ' + res.status);
+                        return res.json().catch(function () { return {}; });
+                    })
+                    .then(function (data) {
+                        // formsubmit returns { success: "true"|"false", message: ... }
+                        var ok = data && (data.success === 'true' || data.success === true);
+                        if (ok) {
+                            if (successBox) {
+                                successBox.style.display = 'flex';
+                                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                            // On first submission, formsubmit sends an activation email
+                            // to the target inbox instead of delivering the message.
+                            // Show the activation hint so the user knows what to expect.
+                            if (activationHint) activationHint.style.display = 'block';
+                            form.reset();
+                        } else {
+                            showError(data && data.message ? data.message : 'Submission was rejected by the server.');
+                        }
+                    })
+                    .catch(function (err) {
+                        showError('Network or server error: ' + (err.message || err) + '. Please try again or email us directly at 914100608@qq.com.');
+                    })
+                    .finally(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = submitBtn.dataset.originalText || 'Send Message';
+                    });
+            });
+
+            function showError(msg) {
+                if (errorBox && errorMsg) {
+                    errorMsg.textContent = msg;
+                    errorBox.style.display = 'flex';
+                    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert(msg);
+                }
+            }
+        })();
     </script>
 </body>
 </html>
