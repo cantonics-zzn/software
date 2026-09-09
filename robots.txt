@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# Disallow common admin / dev paths (none right now, placeholder)
-Disallow: /assets/
-
 # Sitemap location
 Sitemap: https://cantonics.com/sitemap.xml
 
